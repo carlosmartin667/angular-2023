@@ -1,0 +1,28 @@
+<hr />
+<button (click)="ElimarUltimo()" type="button" class="btn btn-outline-danger">
+  eliminar ultimo heroe
+</button>
+
+<h1 *ngIf="!deleteHerore; else nohayHeore">
+  no hay heroes eliminado
+
+</h1>
+<ng-template #nohayHeore>
+  <h3>  heroe heliminado {{ deleteHerore }}</h3>
+</ng-template>
+
+<div class="list-group mt-4">
+  <a
+    class="list-group-item list-group-item-action active text-center"
+    aria-current="true"
+  >
+    lista de heroes
+  </a>
+  <button
+    *ngFor="let name of listNameHero"
+    type="button"
+    class="list-group-item list-group-item-action"
+  >
+    {{ name }}
+  </button>
+</div>
